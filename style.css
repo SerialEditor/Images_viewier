@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     padding: 10px;
@@ -35,11 +31,12 @@ img {
     overflow: hidden;
 }
 
-.images-viewvier__list {
+.images-viewier__list {
     display: flex;
     margin-bottom: 10px;
     box-shadow: 0 0 4px 2px #6a6a6a;
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .images-viewier__item {
@@ -57,20 +54,7 @@ img {
     height: 244px;
 }
 
-.visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(100%);
-    overflow: hidden;
-}
-
-.images-viewvier__button-bar {
+.images-viewier__button-bar {
     display: flex;
 }
 
@@ -86,7 +70,7 @@ img {
     transform: scale(1);
 }
 
-.button--next {
+.button--forward {
     margin-left: auto;
 }
 
@@ -111,18 +95,18 @@ img {
     transition: .25s;
 }
 
-.button--previous::before {
+.button--back::before {
     transform: translate(-50%, -100%) rotate(45deg) scale(1);
 }
 
-.button--next::before {
+.button--forward::before {
     transform: translate(50%, -100%) rotate(225deg) scale(1);
 }
 
-.button--previous:active::before {
+.button--back:active::before {
     transform: translate(-50%, -100%) rotate(45deg) scale(0.9);
 }
 
-.button--next:active::before {
+.button--forward:active::before {
     transform: translate(50%, -100%) rotate(225deg) scale(0.9);
 }
