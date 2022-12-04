@@ -47,9 +47,9 @@ img {
 }
 
 .images-viewier__item {
-    flex-basis: 180px;
+    flex-basis: 90px;
     flex-shrink: 0;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .images-viewier__item:last-child {
@@ -58,7 +58,7 @@ img {
 
 .images-viewier__item img {
     display: block;
-    height: 244px;
+    height: 122px;
 }
 
 .images-viewier__button-bar {
