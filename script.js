@@ -20,6 +20,11 @@ let sliderItems = sliderList.children;
 
 let shiftCounter = 0;
 
+let scrollRate = 95;
+if (window.innerWidth >= 980) {
+    scrollRate = 185;
+}
+
 function shiftItem (counter) {
     let shiftAmount = counter * 100;
     for (let item of sliderItems) {
@@ -27,8 +32,8 @@ function shiftItem (counter) {
     }
 }
 
-function shiftCurrent (counter, current) {
-    viewierList.scrollTo(counter * 95, 0);
+function shiftCurrent (counter, current, rate) {
+    viewierList.scrollTo(counter * rate, 0);
     viewierItems[current].classList.remove('current');
     viewierItems[counter].classList.add('current');
 }
@@ -40,7 +45,7 @@ buttonBack.addEventListener('click', function () {
     }
     shiftCounter--;
     shiftItem(shiftCounter);
-    shiftCurrent(shiftCounter, shiftCounter + 1);
+    shiftCurrent(shiftCounter, shiftCounter + 1, scrollRate);
     if (shiftCounter === 0) {
         buttonBack.disabled = true;
         buttonBack.classList.add('button--disabled');
@@ -54,7 +59,7 @@ buttonForward.addEventListener('click', function () {
     }
     shiftCounter++;
     shiftItem(shiftCounter);
-    shiftCurrent(shiftCounter, shiftCounter - 1);
+    shiftCurrent(shiftCounter, shiftCounter - 1, scrollRate);
     if (shiftCounter === (sliderItems.length - 1)) {
         buttonForward.disabled = true;
         buttonForward.classList.add('button--disabled');

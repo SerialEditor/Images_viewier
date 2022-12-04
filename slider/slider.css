@@ -87,7 +87,7 @@
 }
 
 .button--disabled, .button--disabled:hover {
-    background-color: rgba(252, 122, 76, 0.5);
+    background-color: rgba(245, 145, 109, 0.5);
 }
 
 .button--disabled:active {

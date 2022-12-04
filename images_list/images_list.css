@@ -40,6 +40,7 @@
     }
 
     .images-viewier__item img {
+        width: 180px;
         height: 244px;
     }
 }
