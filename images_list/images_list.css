@@ -1,0 +1,46 @@
+.images-viewier__list {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: white;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.images-viewier__list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.images-viewier__item {
+    flex-basis: 90px;
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.current {
+    box-shadow: 0 0 0 5px rgb(255, 68, 0);
+}
+
+.images-viewier__item:last-child {
+    margin-right: 0;
+}
+
+.images-viewier__item img {
+    display: block;
+    width: 90px;
+    height: 122px;
+}
+
+@media screen and (min-width: 980px) {
+    .images-viewier__item {
+        flex-basis: 180px;
+    }
+
+    .images-viewier__item img {
+        width: 180px;
+        height: 244px;
+    }
+}
