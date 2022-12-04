@@ -34,7 +34,9 @@ img {
 .images-viewier__list {
     display: flex;
     margin-bottom: 10px;
-    box-shadow: 0 0 4px 2px #6a6a6a;
+    padding: 5px;
+    /* box-shadow: 0 0 4px 2px #6a6a6a; */
+    background-color: white;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
