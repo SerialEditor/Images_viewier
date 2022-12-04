@@ -1,6 +1,6 @@
 .images-viewier__list {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px;
     background-color: white;
     overflow: scroll;
@@ -26,6 +26,7 @@
 
 .images-viewier__item img {
     display: block;
+    width: 90px;
     height: 122px;
 }
 
