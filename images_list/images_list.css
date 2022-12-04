@@ -20,6 +20,10 @@
     margin-right: 5px;
 }
 
+.current {
+    box-shadow: 0 0 0 5px rgb(255, 68, 0);
+}
+
 .images-viewier__item:last-child {
     margin-right: 0;
 }

@@ -7,6 +7,8 @@ let sliderButtonBar = slider.querySelector('.slider__button-bar');
 let buttonBack = sliderButtonBar.querySelector('.button--back');
 let buttonForward = sliderButtonBar.querySelector('.button--forward');
 
+buttonBack.disabled = true;
+
 for (let item of viewierItems) {
     let clonedItem = item.cloneNode(true);
     clonedItem.classList.remove('images-viewier__item');
@@ -14,22 +16,48 @@ for (let item of viewierItems) {
     sliderList.appendChild(clonedItem);
 }
 
-let sliderItems = sliderList.children; 
-let movementCounter = 0;
+let sliderItems = sliderList.children;
+
+let shiftCounter = 0;
+
+function shiftItem (counter) {
+    let shiftAmount = counter * 100;
+    for (let item of sliderItems) {
+        item.style.transform = `translateX(-${shiftAmount}%)`;
+    }
+}
+
+function shiftCurrent (counter, current) {
+    viewierList.scrollTo(counter * 95, 0);
+    viewierItems[current].classList.remove('current');
+    viewierItems[counter].classList.add('current');
+}
 
 buttonBack.addEventListener('click', function () {
-    viewierList.scrollTo(0, 0);
-    for (let item of sliderItems) {
-        item.style.transform = 'translateX(0)';
+    if (shiftCounter === (sliderItems.length - 1)) {
+        buttonForward.disabled = false;
+        buttonForward.classList.remove('button--disabled');
+    }
+    shiftCounter--;
+    shiftItem(shiftCounter);
+    shiftCurrent(shiftCounter, shiftCounter + 1);
+    if (shiftCounter === 0) {
+        buttonBack.disabled = true;
+        buttonBack.classList.add('button--disabled');
     }
 });
 
 buttonForward.addEventListener('click', function () {
-    viewierList.scrollTo(viewierList.scrollWidth, 0);
-    movementCounter++;
-    let movementValue = movementCounter * 100;
-    for (let item of sliderItems) {
-        item.style.transform = `translateX(-${movementValue}%)`;
+    if (shiftCounter === 0) {
+        buttonBack.disabled = false;
+        buttonBack.classList.remove('button--disabled');
+    }
+    shiftCounter++;
+    shiftItem(shiftCounter);
+    shiftCurrent(shiftCounter, shiftCounter - 1);
+    if (shiftCounter === (sliderItems.length - 1)) {
+        buttonForward.disabled = true;
+        buttonForward.classList.add('button--disabled');
     }
 });
 
