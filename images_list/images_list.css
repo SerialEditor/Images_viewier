@@ -1,0 +1,30 @@
+.images-viewier__list {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: white;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.images-viewier__list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.images-viewier__item {
+    flex-basis: 90px;
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.images-viewier__item:last-child {
+    margin-right: 0;
+}
+
+.images-viewier__item img {
+    display: block;
+    height: 122px;
+}

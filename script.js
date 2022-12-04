@@ -1,5 +1,5 @@
 let viewierList = document.querySelector('.images-viewier__list');
-let viewierButtonBar = document.querySelector('.images-viewier__button-bar');
+let viewierButtonBar = document.querySelector('.slider__button-bar');
 let buttonBack = viewierButtonBar.querySelector('.button--back');
 let buttonForward = viewierButtonBar.querySelector('.button--forward');
 

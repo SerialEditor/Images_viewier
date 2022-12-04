@@ -1,3 +1,6 @@
+@import url(images_list/images_list.css);
+@import url(slider/slider.css);
+
 body {
     margin: 0;
     padding: 10px;
@@ -17,7 +20,6 @@ img {
     height: auto;
 }
 
-/* С этой строки копировать стили*/
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -29,93 +31,4 @@ img {
     clip: rect(0, 0, 0, 0);
     clip-path: inset(100%);
     overflow: hidden;
-}
-
-.images-viewier__list {
-    display: flex;
-    margin-bottom: 10px;
-    padding: 5px;
-    /* box-shadow: 0 0 4px 2px #6a6a6a; */
-    background-color: white;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-}
-
-.images-viewier__list::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.images-viewier__item {
-    flex-basis: 90px;
-    flex-shrink: 0;
-    margin-right: 5px;
-}
-
-.images-viewier__item:last-child {
-    margin-right: 0;
-}
-
-.images-viewier__item img {
-    display: block;
-    height: 122px;
-}
-
-.images-viewier__button-bar {
-    display: flex;
-}
-
-.button {
-    position: relative;
-    width: 36px;
-    height: 36px;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-color: rgba(255, 68, 0, 0.5);
-    cursor: pointer;
-    transition: .25s;
-    transform: scale(1);
-}
-
-.button--forward {
-    margin-left: auto;
-}
-
-.button:hover {
-    background-color: rgb(255, 68, 0);
-}
-
-.button:active {
-    transform: scale(0.9);
-}
-
-.button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 35%;
-    height: 35%;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    transform-origin: 0 100%;
-    transition: .25s;
-}
-
-.button--back::before {
-    transform: translate(-50%, -100%) rotate(45deg) scale(1);
-}
-
-.button--forward::before {
-    transform: translate(50%, -100%) rotate(225deg) scale(1);
-}
-
-.button--back:active::before {
-    transform: translate(-50%, -100%) rotate(45deg) scale(0.9);
-}
-
-.button--forward:active::before {
-    transform: translate(50%, -100%) rotate(225deg) scale(0.9);
 }
